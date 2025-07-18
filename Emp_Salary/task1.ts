@@ -10,23 +10,29 @@ class EmployeeSalary{
     }
 
     hra(){
-         let hra_salary:number= 0.20*this.Employee_salary;
-         return hra_salary;
+         return 0.20*this.Employee_salary;
+        
     }
 
     da(){
-        let da_salary : number = 0.10*this.Employee_salary;
-        return da_salary;
+        return 0.10*this.Employee_salary;
+        
     }
 
     Gross_salary(){
         return this.Employee_salary + this.hra() + this.da();
     }
+    
+    displaydetails() {
+        console.log(`BASIC SALARY : ${this.Employee_salary}`);
+        console.log(`HOUSE RENT ALLOWANCE : ${this.hra()}`);
+        console.log(`DEARNESS ALLOWANCE : ${this.da()}`);
+        console.log(`GROSS SALARY : ${this.Gross_salary()}`);
+        
+    }
 
 }
 
 let empObj = new EmployeeSalary(1,"Abinesh",20000);
-console.log(`House Rent Allowance : ${empObj.hra()}`);
-console.log(`Dearness Allowance : ${empObj.da()}`);
-console.log(`GROSS SALARY : ${empObj.Gross_salary()}`);
+empObj.displaydetails();
 
